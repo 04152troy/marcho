@@ -115,6 +115,6 @@ $(function(){
     const timeinterval = setInterval(updateClock, 1000);
   }
 
-  const deadline = $('.promo__clock').attr('data-time');
-  initializeClock('promo__clock', deadline);
+
+  
 });
