@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/contacts.min.css">
+</head>
+
+<body>
+
+  {% include 'app/modul/_header/_header.html' %}
+  <main class="main">
+
+
+{% include 'app/modul/_top/_top.html' %}
+
+
+    <section class="map">
+      <div class="container">
+        <div id="map"></div>
+      </div>
+    </section>
+
+    <section class="contact">
+      <div class="container">
+        <div class="contact__inner">
+          <div class="contact__info">
+            <h3 class="contact__info-title">
+              Feel Free Don’t
+              Hesitate To
+              Contact With Us
+            </h3>
+            <p class="contact__info-text">
+              Lorem ipsum dolor sit amet, consectetur adingn elit, sed do eiusmod tempor incididunt ut labore et dolore
+              magna aliqua.
+              Quis ipsum suspendisse ultrices gravida. Risus commodo maecnaacnrao cumsan lacus vel facilisis.
+            </p>
+            <ul class="contact__info-list">
+              <li class="contact__info-item">
+                <a class="contact__info-phone" href="tel:+01234567896">+0-123-456-7896</a>
+                <a class="contact__info-phone" href="tel:+01234567896">+0-123-456-7896</a>
+              </li>
+              <li class="contact__info-item contact__info-item--location">
+                Ranlon Market 789 Road,
+                Market Street, Newyork
+              </li>
+              <li class="contact__info-item contact__info-item--email">
+                <div>yourmailaddress@gmail.com</div>
+                <div>companymail@gmail.com</div>
+              </li>
+            </ul>
+          </div>
+          <form class="contact__form" action="#">
+            <p class="contact__form-title"></p>
+            <div class="contact__form-box">
+              <input class="contact__form-input" type="text" placeholder="Your Name">
+              <input class="contact__form-input" type="text" placeholder="Your E-mail Address">
+            </div>
+            <input class="contact__form-input" type="text" placeholder="Subject">
+            <textarea class="contact__form-textarea" placeholder="Message here"></textarea>
+            <button class="contact__form-btn" type="submit">SEND MESSAGE</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+
+
+  </main>
+{% include 'app/modul/_footer/_footer.html' %}
+
+
+  <script src="https://maps.googleapis.com/maps/api/js?key=&callback=initMap&libraries=&v=weekly" async></script>
+  <script>
+
+    const deadline = $('.promo__clock').attr('data-time');
+    initializeClock('promo__clock', deadline);
+
+    let map;
+
+    function initMap() {
+      map = new google.maps.Map(document.getElementById("map"), {
+        center: { lat: 53.87978478136185, lng: 27.679348397486514 },
+        zoom: 15,
+        styles: [
+          {
+            "featureType": "all",
+            "elementType": "labels",
+            "stylers": [
+              {
+                "visibility": "on"
+              }
+            ]
+          },
+          {
+            "featureType": "all",
+            "elementType": "labels.text.fill",
+            "stylers": [
+              {
+                "saturation": 36
+              },
+              {
+                "color": "#000000"
+              },
+              {
+                "lightness": 40
+              }
+            ]
+          },
+          {
+            "featureType": "all",
+            "elementType": "labels.text.stroke",
+            "stylers": [
+              {
+                "visibility": "on"
+              },
+              {
+                "color": "#000000"
+              },
+              {
+                "lightness": 16
+              }
+            ]
+          },
+          {
+            "featureType": "all",
+            "elementType": "labels.icon",
+            "stylers": [
+              {
+                "visibility": "off"
+              }
+            ]
+          },
+          {
+            "featureType": "administrative",
+            "elementType": "geometry.fill",
+            "stylers": [
+              {
+                "color": "#000000"
+              },
+              {
+                "lightness": 20
+              }
+            ]
+          },
+          {
+            "featureType": "administrative",
+            "elementType": "geometry.stroke",
+            "stylers": [
+              {
+                "color": "#000000"
+              },
+              {
+                "lightness": 17
+              },
+              {
+                "weight": 1.2
+              }
+            ]
+          },
+          {
+            "featureType": "administrative.country",
+            "elementType": "labels.text.fill",
+            "stylers": [
+              {
+                "color": "#000000"
+              }
+            ]
+          },
+          {
+            "featureType": "administrative.locality",
+            "elementType": "labels.text.fill",
+            "stylers": [
+              {
+                "color": "#c4c4c4"
+              }
+            ]
+          },
+          {
+            "featureType": "administrative.neighborhood",
+            "elementType": "labels.text.fill",
+            "stylers": [
+              {
+                "color": "#f3db2e"
+              }
+            ]
+          },
+          {
+            "featureType": "landscape",
+            "elementType": "geometry",
+            "stylers": [
+              {
+                "color": "#000000"
+              },
+              {
+                "lightness": 20
+              }
+            ]
+          },
+          {
+            "featureType": "poi",
+            "elementType": "geometry",
+            "stylers": [
+              {
+                "color": "#000000"
+              },
+              {
+                "lightness": 21
+              },
+              {
+                "visibility": "on"
+              }
+            ]
+          },
+          {
+            "featureType": "poi.business",
+            "elementType": "geometry",
+            "stylers": [
+              {
+                "visibility": "on"
+              }
+            ]
+          },
+          {
+            "featureType": "road",
+            "elementType": "geometry.fill",
+            "stylers": [
+              {
+                "color": "#c31b67"
+              },
+              {
+                "saturation": "12"
+              },
+              {
+                "visibility": "on"
+              }
+            ]
+          },
+          {
+            "featureType": "road",
+            "elementType": "geometry.stroke",
+            "stylers": [
+              {
+                "visibility": "off"
+              }
+            ]
+          },
+          {
+            "featureType": "road.highway",
+            "elementType": "geometry.fill",
+            "stylers": [
+              {
+                "color": "#cb7432"
+              },
+              {
+                "lightness": "0"
+              }
+            ]
+          },
+          {
+            "featureType": "road.highway",
+            "elementType": "geometry.stroke",
+            "stylers": [
+              {
+                "color": "#000000"
+              },
+              {
+                "lightness": 29
+              },
+              {
+                "weight": 0.2
+              },
+              {
+                "visibility": "off"
+              }
+            ]
+          },
+          {
+            "featureType": "road.highway",
+            "elementType": "labels.text",
+            "stylers": [
+              {
+                "visibility": "off"
+              }
+            ]
+          },
+          {
+            "featureType": "road.highway",
+            "elementType": "labels.text.fill",
+            "stylers": [
+              {
+                "color": "#ffffff"
+              },
+              {
+                "visibility": "on"
+              }
+            ]
+          },
+          {
+            "featureType": "road.highway",
+            "elementType": "labels.text.stroke",
+            "stylers": [
+              {
+                "color": "#cb7432"
+              },
+              {
+                "visibility": "on"
+              }
+            ]
+          },
+          {
+            "featureType": "road.arterial",
+            "elementType": "geometry",
+            "stylers": [
+              {
+                "color": "#000000"
+              },
+              {
+                "lightness": 18
+              }
+            ]
+          },
+          {
+            "featureType": "road.arterial",
+            "elementType": "geometry.fill",
+            "stylers": [
+              {
+                "color": "#575757"
+              }
+            ]
+          },
+          {
+            "featureType": "road.arterial",
+            "elementType": "labels.text.fill",
+            "stylers": [
+              {
+                "color": "#ffffff"
+              }
+            ]
+          },
+          {
+            "featureType": "road.arterial",
+            "elementType": "labels.text.stroke",
+            "stylers": [
+              {
+                "color": "#2c2c2c"
+              }
+            ]
+          },
+          {
+            "featureType": "road.local",
+            "elementType": "geometry",
+            "stylers": [
+              {
+                "color": "#000000"
+              },
+              {
+                "lightness": 16
+              }
+            ]
+          },
+          {
+            "featureType": "road.local",
+            "elementType": "labels.text.fill",
+            "stylers": [
+              {
+                "color": "#999999"
+              }
+            ]
+          },
+          {
+            "featureType": "transit",
+            "elementType": "geometry",
+            "stylers": [
+              {
+                "color": "#000000"
+              },
+              {
+                "lightness": 19
+              }
+            ]
+          },
+          {
+            "featureType": "water",
+            "elementType": "geometry",
+            "stylers": [
+              {
+                "color": "#000000"
+              },
+              {
+                "lightness": 17
+              }
+            ]
+          }
+        ]
+      });
+    }
+
+  </script>
+  <script src="js/main.min.js"></script>
+</body>
+
+</html>
