@@ -21,6 +21,7 @@
     margin-bottom: 40px;
     @extend %roboto-700;
     font-size: 48px;
+    line-height: 52px;
   }
   &__text{
     margin-bottom: 55px;
@@ -168,8 +169,6 @@
   }
   
 }
-&__checkbox{
-  }
   &__checkbox--blue{
     width: 16px;
     height: 16px;
@@ -312,6 +311,9 @@
 .shop-content{
   width: 100%;
   &__inner{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 30px;
     border-bottom: 1px solid #ececec;
   }
     .product-item{

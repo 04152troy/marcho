@@ -53,9 +53,9 @@ display: block;
   }
     &__wrapper-box{
       padding: 30px 40px;
-      width: 490px;
+      max-width: 490px;
       border: 1px solid #ececec;
-      border-left: none;
+      
     }
 
     .product-item__title{
